@@ -13,9 +13,9 @@ class AddFieldsToUserTable extends Migration
      */
     public function up()
     {
-        Schema::table('user', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
-            $table->string('phone');
+            $table->string('phone')->nullable();
             // 1 = author, 2 = admin
             $table->integer('role')->default(1);
             $table->boolean('status')->default(1);
@@ -29,7 +29,7 @@ class AddFieldsToUserTable extends Migration
      */
     public function down()
     {
-        Schema::table('user', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
         });
     }
