@@ -23,3 +23,8 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('welcome') . Auth::user()->name;
 })->middleware(['auth','verified']);
+
+
+Route::get('/admin', function () {
+    return 'admin page';
+});
